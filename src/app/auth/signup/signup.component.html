@@ -1,3 +1,24 @@
-<p>
-  signup works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Créer un compte</h2>
+    <p>Tous les champs sont obligatoires.</p>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="mail">E-mail : </label>
+        <input type="email" id="mail" class="form-control" formControlName="email">
+        <p *ngIf="emailCtrl.touched && emailCtrl.hasError('required')">Ce champ est obligatoire.</p>
+        <p *ngIf="emailCtrl.dirty && emailCtrl.hasError('email')">Ce n'est pas une adresse mail valide.</p>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Mot de passe : </label>
+        <input type="password" id="pwd" class="form-control" formControlName="password">
+        <p *ngIf="passwordCtrl.touched && passwordCtrl.hasError('required')">Ce champ est obligatoire.</p>
+        <p *ngIf="passwordCtrl.dirty && passwordCtrl.hasError('pattern')">
+          Le mot de passe doit contenir au minimum 6 caractères alphanumériques
+        </p>
+      </div>
+      <button type="submit" [disabled]="signupForm.invalid">Créer mon compte</button>
+    </form>
+    <p>{{ errorMessage }}</p>
+  </div>
+</div>

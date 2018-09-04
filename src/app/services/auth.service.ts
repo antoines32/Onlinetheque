@@ -13,7 +13,7 @@ export class AuthService {
       (resolve, reject) => {
         firebase.auth().createUserWithEmailAndPassword(email, password).then(
           () => {resolve(); },
-          (error) => {reject(error); }
+          (error) => { reject(error); }
         );
       }
     );
