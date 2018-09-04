@@ -16,7 +16,8 @@ export class SignupComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
     this.emailCtrl = formBuilder.control('', [Validators.required, Validators.email]);
-    this.passwordCtrl = formBuilder.control('', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]);
+    this.passwordCtrl = formBuilder.control(
+      '', [Validators.required, Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)]);
   }
 
   ngOnInit() {
