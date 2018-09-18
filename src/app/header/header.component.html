@@ -4,11 +4,14 @@
       <li routerLinkActive="active">
         <a routerLink="books">Les Livres</a>
       </li>
-      <li routerLinkActive="active">
+      <li routerLinkActive="active" *ngIf="!isAuth">
         <a routerLink="auth/signup">Créer un compte</a>
       </li>
-      <li routerLinkActive="active">
+      <li routerLinkActive="active" *ngIf="!isAuth">
         <a routerLink="auth/signin">Connexion</a>
+      </li>
+      <li>
+        <a (click)="onSignOut()" *ngIf="isAuth">Deconnexion</a>
       </li>
     </ul>
   </div>
