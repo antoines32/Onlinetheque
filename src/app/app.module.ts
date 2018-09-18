@@ -20,7 +20,9 @@ const appRoutes: Routes = [
   {path: 'auth/signup', component: SignupComponent},
   {path: 'books', component: BookListComponent},
   {path: 'books/new', component: BookFormComponent},
-  {path: 'books/view/:id', component: SingleBookComponent}
+  {path: 'books/view/:id', component: SingleBookComponent},
+  { path: '', redirectTo: 'books', pathMatch: 'full' },
+  { path: '**', redirectTo: 'books' }
 ]
 @NgModule({
   declarations: [
