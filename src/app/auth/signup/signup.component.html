@@ -14,7 +14,7 @@
         <input type="password" id="pwd" class="form-control" formControlName="password">
         <p *ngIf="passwordCtrl.touched && passwordCtrl.hasError('required')">Ce champ est obligatoire.</p>
         <p *ngIf="passwordCtrl.dirty && passwordCtrl.hasError('pattern')">
-          Le mot de passe doit contenir au minimum 6 caractères alphanumériques
+          Le mot de passe doit contenir au minimum 8 caractères alphanumériques
         </p>
       </div>
       <button type="submit" [disabled]="signupForm.invalid">Créer mon compte</button>
