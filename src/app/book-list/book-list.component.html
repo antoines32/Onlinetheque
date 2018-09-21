@@ -2,6 +2,8 @@
   <div class="col-xs-12">
     <h2>Vos livres</h2>
     <div class="list-group">
+      <div *ngFor="let book of books; let i = index" class="list-group-item">{{book.title}} par {{book.autor}}</div>
     </div>
+    <button class="btn btn-primary" (click)="onNewBook()">Nouveau livre</button>
   </div>
 </div>
