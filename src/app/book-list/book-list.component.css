@@ -1,0 +1,8 @@
+.book-title {
+  font-weight: bold;
+}
+
+.list-of-books:hover {
+  color: white;
+  background-color: #286090;
+}
