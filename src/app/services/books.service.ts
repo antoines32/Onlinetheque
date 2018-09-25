@@ -70,7 +70,7 @@ export class BooksService {
             reject();
           },
           () => {
-            resolve(upload.snapshot.getDownloadURL());
+            resolve(upload.snapshot.ref.getDownloadURL());
           }
         );
       }
