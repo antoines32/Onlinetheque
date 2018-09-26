@@ -10,3 +10,12 @@
   color: white;
   background-color: #286090;
 }
+
+.suppr {
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+}
+
+.suppr img {
+  max-width: 20px;
+}
