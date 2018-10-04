@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+.btn-custom-blue {
+  background-color: #286090;
+  color: white;
+}
+
+nav li a {
+  color: white !important;
+}
+
+.nav-link:hover {
+  text-shadow: 2px 2px 3px black;
+}
+
+.nav-link:active {
+  text-shadow: none;
+}
+
+app-header .active {
+  font-weight: bold;
+}

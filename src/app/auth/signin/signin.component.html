@@ -1,7 +1,7 @@
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-lg-12">
     <h2>S'identifier</h2>
-    <p>Tous les champs sont obligatoires.</p>
+
     <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="mail">E-mail : </label>
@@ -17,7 +17,7 @@
           Le mot de passe doit contenir au minimum 6 caractères alphanumériques
         </p>-->
       </div>
-      <button type="submit">Se connecter</button>
+      <button class="btn btn-custom-blue" type="submit">Se connecter</button>
     </form>
     <p>{{ errorMessage }}</p>
   </div>

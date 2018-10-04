@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-lg-12">
     <h2>Vos livres</h2>
       <div class="list-group">
         <div *ngFor="let book of books; let i = index" class="list-group-item row list-of-books">
@@ -9,6 +9,6 @@
           <div class="col-lg-1 item-suppr" (click)="onDelete(book)"><img src="../../assets/trash.png"></div>
         </div>
       </div>
-    <button class="btn btn-primary" (click)="onNewBook()">Nouveau livre</button>
+    <button class="btn btn-custom-blue" (click)="onNewBook()">Nouveau livre</button>
   </div>
 </div>
