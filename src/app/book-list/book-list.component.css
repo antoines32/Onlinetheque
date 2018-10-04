@@ -2,9 +2,15 @@
   font-weight: bold;
 }
 
+div .list-group {
+  margin-bottom: 20px;
+}
+
 .list-of-books {
   cursor: pointer;
   padding: 0px;
+  display: flex;
+  flex-direction: row;
 }
 
 .item-book:hover {

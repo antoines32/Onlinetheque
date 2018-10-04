@@ -17,6 +17,14 @@
           Le mot de passe doit contenir au minimum 8 caractères alphanumériques
         </p>
       </div>
+      <div class="form-group">
+        <label for="pwdV">Retaper mot de passe : </label>
+        <input type="password" id="pwdV" class="form-control" formControlName="passwordVerify">
+        <p *ngIf="passwordCtrlVerify.touched && passwordCtrlVerify.hasError('required')">Ce champ est obligatoire.</p>
+        <p *ngIf="passwordCtrlVerify.dirty && passwordCtrlVerify.hasError('pattern')">
+          Le mot de passe doit contenir au minimum 8 caractères alphanumériques
+        </p>
+      </div>
       <button class="btn btn-custom-blue" type="submit" [disabled]="signupForm.invalid">Créer mon compte</button>
     </form>
     <p>{{ errorMessage }}</p>

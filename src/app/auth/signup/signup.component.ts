@@ -12,27 +12,36 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup;
   emailCtrl: FormControl;
   passwordCtrl: FormControl;
+  passwordCtrlVerify: FormControl;
   errorMessage: string;
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
     this.emailCtrl = formBuilder.control('', [Validators.required, Validators.email]);
     this.passwordCtrl = formBuilder.control(
       '', [Validators.required, Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)]);
+    this.passwordCtrlVerify = formBuilder.control(
+      '', [Validators.required]);
   }
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
       email: this.emailCtrl,
-      password: this.passwordCtrl
+      password: this.passwordCtrl,
+      passwordVerify: this.passwordCtrlVerify
     });
   }
 
   onSubmit() {
     const email = this.signupForm.get('email').value;
     const password = this.signupForm.get('password').value;
-    this.authService.createUser(email, password).then(
-      () => { this.router.navigate(['/books']); },
-      (error) => { this.errorMessage = error; }
-    );
+    const passwordVerify = this.signupForm.get('passwordVerify').value;
+    if (password === passwordVerify) {
+      this.authService.createUser(email, password).then(
+        () => { this.router.navigate(['/books']); },
+        (error) => { this.errorMessage = error; }
+      );
+    } else {
+      let errorPwd = 'les mot de passes ne correspondent pas';
+    }
   }
 }
