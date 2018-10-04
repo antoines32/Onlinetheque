@@ -2,9 +2,11 @@
   <div class="col-xs-12">
     <h2>Vos livres</h2>
       <div class="list-group">
-        <div *ngFor="let book of books; let i = index" class="list-group-item list-of-books" (click)="onViewBook(i)">
-          <p class=""><span class="book-title">{{book.title}}</span> par {{book.autor}}</p>
-          <a class="suppr" (click)="onDelete(book)"><img src="../../assets/croix.png"></a>
+        <div *ngFor="let book of books; let i = index" class="list-group-item row list-of-books">
+          <div class="col-lg-11 item-book" (click)="onViewBook(i)">
+            <p><span class="book-title">{{book.title}}</span> par {{book.autor}}</p>
+          </div>
+          <div class="col-lg-1 item-suppr" (click)="onDelete(book)"><img src="../../assets/trash.png"></div>
         </div>
       </div>
     <button class="btn btn-primary" (click)="onNewBook()">Nouveau livre</button>

@@ -3,7 +3,6 @@ import {BookModel} from '../models/book.model';
 import {Subject} from 'rxjs';
 import * as firebase from 'firebase';
 import DataSnapshot = firebase.database.DataSnapshot;
-import {promise} from 'selenium-webdriver';
 
 @Injectable({
   providedIn: 'root'

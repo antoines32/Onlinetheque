@@ -4,18 +4,43 @@
 
 .list-of-books {
   cursor: pointer;
+  padding: 0px;
 }
 
-.list-of-books:hover {
+.item-book:hover {
   color: white;
   background-color: #286090;
 }
 
+.item-book {
+  /*margin: 10px 15px;*/
+  padding: 15px;
+  border-right: 0.7px solid darkgrey;
+  border-radius: 2px;
+}
+
+.item-book p {
+  margin: 0px;
+}
+
+.list-of-books {
+  padding: auto;
+}
+
 .suppr {
-  border: 1px solid darkgrey;
   border-radius: 5px;
 }
 
-.suppr img {
-  max-width: 20px;
+.item-suppr img {
+  max-width: 30px;
+  margin: auto;
+}
+
+.item-suppr {
+  padding: 10px 25px;
+  border-radius: 2px;
+}
+
+.item-suppr:hover {
+  background-color: #cd1c1c;
 }

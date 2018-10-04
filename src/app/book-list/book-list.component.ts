@@ -23,7 +23,9 @@ export class BookListComponent implements OnInit, OnDestroy {
     this.router.navigate(['/books', 'new']);
   }
   onDelete(book: BookModel) {
-    this.bookService.removeBook(book);
+    if (confirm('Etes vous sure de vouloir supprimer ce livre de la bibliothèque en ligne ?')) {
+      this.bookService.removeBook(book);
+    }
   }
   onViewBook(id: number) {
     this.router.navigate(['/books', 'view', id]);
@@ -31,5 +33,4 @@ export class BookListComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.bookSubscription.unsubscribe();
   }
-
 }
