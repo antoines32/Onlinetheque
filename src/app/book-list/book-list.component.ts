@@ -30,6 +30,9 @@ export class BookListComponent implements OnInit, OnDestroy {
   onViewBook(id: number) {
     this.router.navigate(['/books', 'view', id]);
   }
+  onEdit(id: number) {
+    this.router.navigate(['/books', 'edit', id]);
+  }
   ngOnDestroy() {
     this.bookSubscription.unsubscribe();
   }

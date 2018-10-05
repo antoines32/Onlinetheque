@@ -3,10 +3,11 @@
     <h2>Vos livres</h2>
       <div class="list-group">
         <div *ngFor="let book of books; let i = index" class="list-group-item list-of-books row">
-          <div class="item-book col-11" (click)="onViewBook(i)">
+          <div class="item-book col-10" (click)="onViewBook(i)">
             <p><span class="book-title">{{book.title}}</span> par {{book.autor}}</p>
           </div>
-          <div class="item-suppr col-1" (click)="onDelete(book)"><img src="../../assets/trash.png"></div>
+          <div class="item-ico ico-delete col-1" (click)="onDelete(book)"><img src="../../assets/trash.png"></div>
+          <div class="item-ico ico-edit col-1" (click)="onEdit(book)"><img src="../../assets/edit-512.png"></div>
         </div>
       </div>
     <button class="btn btn-custom-blue" (click)="onNewBook()">Nouveau livre</button>

@@ -37,16 +37,23 @@ div .list-group {
   border-radius: 5px;
 }
 
-.item-suppr img {
+.item-ico img {
   max-width: 30px;
-  margin: auto;
+  margin: 10px 15px;
 }
 
-.item-suppr {
-  padding: 10px 25px;
+.ico-delete {
+  border-right: 0.7px solid darkgrey;
+}
+
+.item-ico {
   border-radius: 2px;
 }
 
-.item-suppr:hover {
+.ico-delete:hover {
   background-color: #cd1c1c;
+}
+
+.ico-edit:hover {
+  background-color: dodgerblue;
 }

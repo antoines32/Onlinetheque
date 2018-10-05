@@ -9,7 +9,9 @@
       <p class="synop">Synopsis :<br>
         {{book.synopsis}}</p>
     </div>
-    <div class="illustration col-lg-4 col-xs-12"><img *ngIf="book.photo" [src]=book.photo></div>
+    <div class="illustration col-lg-4 col-xs-12">
+      <img *ngIf="book.photo; else noPhoto" [src]=book.photo><ng-template #noPhoto><img src="../../../assets/croix.png"></ng-template>
+    </div>
   </div>
   <button (click)="onBack()" class="back-to-list btn btn-default">Retour</button>
 </div>

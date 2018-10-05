@@ -14,6 +14,7 @@ import {BooksService} from './services/books.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
+import { BookFormEditComponent } from './book-list/book-form-edit/book-form-edit.component';
 
 const appRoutes: Routes = [
   {path: 'auth/signin', component: SigninComponent},
@@ -21,8 +22,9 @@ const appRoutes: Routes = [
   {path: 'books', canActivate: [AuthGuardService], component: BookListComponent},
   {path: 'books/new', canActivate: [AuthGuardService], component: BookFormComponent},
   {path: 'books/view/:id', canActivate: [AuthGuardService], component: SingleBookComponent},
-  { path: '', redirectTo: 'books', pathMatch: 'full' },
-  { path: '**', redirectTo: 'books' }
+  {path: 'books/edit/:id', canActivate: [AuthGuardService], component: BookFormEditComponent},
+  {path: '', redirectTo: 'books', pathMatch: 'full'},
+  {path: '**', redirectTo: 'books'}
 ]
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ const appRoutes: Routes = [
     SingleBookComponent,
     BookFormComponent,
     HeaderComponent,
+    BookFormEditComponent,
   ],
   imports: [
     BrowserModule,
