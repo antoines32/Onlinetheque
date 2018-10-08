@@ -5,3 +5,7 @@ input.ng-invalid.ng-touched  {
 input.ng-invalid.ng-dirty  {
   border: 2px solid red;
 }
+
+.error-message {
+  color: red;
+}

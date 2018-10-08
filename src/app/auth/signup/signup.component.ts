@@ -14,6 +14,7 @@ export class SignupComponent implements OnInit {
   passwordCtrl: FormControl;
   passwordCtrlVerify: FormControl;
   errorMessage: string;
+  errorPwd: boolean;
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
     this.emailCtrl = formBuilder.control('', [Validators.required, Validators.email]);
@@ -36,12 +37,15 @@ export class SignupComponent implements OnInit {
     const password = this.signupForm.get('password').value;
     const passwordVerify = this.signupForm.get('passwordVerify').value;
     if (password === passwordVerify) {
+      this.errorPwd = false;
       this.authService.createUser(email, password).then(
         () => { this.router.navigate(['/books']); },
         (error) => { this.errorMessage = error; }
       );
     } else {
-      let errorPwd = 'les mot de passes ne correspondent pas';
+      this.errorPwd = true;
+      this.passwordCtrl.setValue('');
+      this.passwordCtrlVerify.setValue('');
     }
   }
 }
